@@ -1,19 +1,17 @@
 import './App.css'
-import {Barranav} from './components/NavBar.js'
+import './components/Header/Header.css'
+import logo from './images/Logo.png'
+import { Header } from './components/Header/Header'
+import 'bootstrap/dist/css/bootstrap.min.css';
+import { ItemListContainer } from './components/ItemListContainer';
 
 
 
 const App = () => {
   return (
     <div>
-    <header>
-        <h1>
-          Tienda de Sneakers by SAOS
-        </h1>
-      
-     
-      </header>
-      <Barranav/>
+     <Header/>
+     <ItemListContainer saludo={'saludo'}/>
     </div>   
   );
 }
