@@ -1,5 +1,5 @@
 import { Barranav } from './NavBar'
-import { ItemListContainer } from '../ItemListContainer';
+
 
 export const Header = () => {
 
@@ -8,11 +8,10 @@ return (
             <div className="header-container">
 
                <h1 className="header-title">Tienda de Sneakers</h1>
-                <Barranav/>
-                <ItemListContainer seccion="Productos"/>
+                <Barranav/>              
                 </div>
 
-               
+
         </header>
 )
 

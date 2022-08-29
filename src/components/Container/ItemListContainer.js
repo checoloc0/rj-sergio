@@ -1,13 +1,17 @@
-
+import { ItemCount } from './ItemCount';
 
 export const ItemListContainer =(props) => {
 
+  
 return(
     <section>
         <h4>
           {props.seccion}
-        </h4>
 
+
+          <ItemCount stock={props.stock}/>
+        </h4>   
+        
     </section>
 
 
