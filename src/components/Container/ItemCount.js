@@ -19,23 +19,21 @@ let stock= props.stock
 const restar =()=>{
         if( contador> 0){     
         setContador(contador-1)
-     
+        console.log(contador)
         }
 }
 
 
     return (
-        <div>
-           
-              <h2>Contador de Productos</h2>  
+        <div>          
+             
               <p>Total de productos en stock {stock}</p>
                 <hr/>
                 <button onClick={restar} className="btn btn-outline-primary">-</button>
                 <span className="mx-2">{contador}</span>
                 <button onClick={sumar} className="btn btn-outline-primary"> + </button>
                <br/>
-                <button className="btn btn-outline-primary"> Agregar al Carrito </button>
-             
+                <button className="btn btn-outline-primary"> Agregar al Carrito </button>         
               
                 
         </div>

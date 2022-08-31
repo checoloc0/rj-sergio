@@ -11,8 +11,7 @@ const App = () => {
     <div>
      <Header/>
      <ItemListContainer seccion="Producto 1" stock="5"/>
-     <ItemListContainer seccion="Producto 2" stock="4"/>
-     <ItemListContainer seccion="Producto 3" stock="3"/>
+     
     </div>   
   );
 }
