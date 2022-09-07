@@ -40,7 +40,7 @@ export const ItemListContainer =() => {
 return(
   
     <div>
-        <h2>Productos 2</h2>  
+        <h2>Productos </h2>  
         <hr/>
             {
               loading ? <h2>Cargando...</h2>
