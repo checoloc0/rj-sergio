@@ -54,6 +54,15 @@ export const stock =[
       pictureURL:'https://via.placeholder.com/250',
       stock:5,
       category:'basketball'
+    },
+    {
+      id:7,
+      title:'Puma',
+      description:'Tenis de soccer',
+      price:8300,
+      pictureURL:'https://via.placeholder.com/250',
+      stock:7,
+      category:'soccer'
     }
   
   

@@ -9,7 +9,7 @@ export const ItemList = ({productos=[]}) =>{
         return(
                 <div key={prod.id}>
                  <Item producto={prod} /> 
-                 <ItemCount stock={prod.stock}/>
+                { /* < ItemCount stock={prod.stock}/> */ }
                 <hr/>                             
                </div>  
 
