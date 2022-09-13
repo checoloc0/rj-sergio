@@ -8,6 +8,7 @@ import  {BrowserRouter,Routes,Route,Navigate} from 'react-router-dom'
 import { Contacto } from './components/Contacto/Contacto';
 import { Nosotros } from './components/Nosotros/Nosotros';
 import { ItemDetailContainer } from './components/ItemDetailContainer/ItemDetailcontainer';
+import { Cart } from './components/Cart/Cart';
 
 const App = () => {
   return (
@@ -17,6 +18,7 @@ const App = () => {
         <Routes>
          <Route path='/nosotros' element= { <Nosotros/> } />
          <Route path='/contacto' element= { <Contacto/> } />  
+         <Route path='/cart' element = { <Cart/>} />
           
          <Route path='/productos/:categoryId' element= { <ItemListContainer/> } />  
          <Route path='/item/:itemId' element={ <ItemDetailContainer/> }/>

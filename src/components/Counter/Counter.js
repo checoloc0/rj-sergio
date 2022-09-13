@@ -1,6 +1,9 @@
 import {useState} from 'react'
+import { Cart } from '../Cart/Cart'
+
 
 import { Link } from "react-router-dom";
+
 
 export const Counter = ({max,counter,setCounter,handleAgregar}) =>{
 
@@ -18,10 +21,6 @@ export const Counter = ({max,counter,setCounter,handleAgregar}) =>{
         }
     }
 
-    const endCart=() =>{
-        <Link to = { "/cart"  } className="btn btn-primary my-2">Ver más</Link>
-    }
-
     return (
         <div>
             <button className="btn btn-outline-primary" onClick={handleRestar} >-</button>
@@ -31,7 +30,7 @@ export const Counter = ({max,counter,setCounter,handleAgregar}) =>{
             <br/>
             <button onClick= {handleAgregar} className="btn btn-success my-3">Agregar al Carrito</button>
             <br/>
-            <button onClick={endCart} className="btn btn-success my-3">Terminar Compra</button>
+            <Link to = { "/cart"  } className="btn btn-primary my-2">Terminar compra</Link>
            
 
         </div>
