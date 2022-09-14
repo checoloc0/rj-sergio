@@ -10,9 +10,18 @@ import { Nosotros } from './components/Nosotros/Nosotros';
 import { ItemDetailContainer } from './components/ItemDetailContainer/ItemDetailcontainer';
 import { Cart } from './components/Cart/Cart';
 
+import {  CartProvider } from './components/Context/CartContext';
+
+
+
 const App = () => {
+
+
+
+
   return (
     <div>
+ <CartProvider>
     <BrowserRouter>
        <Header/>
         <Routes>
@@ -26,6 +35,7 @@ const App = () => {
          <Route path ='*' element = { <Navigate to="/"/>  }  />
            </Routes>
      </BrowserRouter>
+     </CartProvider>
     </div>   
   );
 }

@@ -30,7 +30,7 @@ export const Counter = ({max,counter,setCounter,handleAgregar}) =>{
             <br/>
             <button onClick= {handleAgregar} className="btn btn-success my-3">Agregar al Carrito</button>
             <br/>
-            <Link to = { "/cart"  } className="btn btn-primary my-2">Terminar compra</Link>
+          
            
 
         </div>
