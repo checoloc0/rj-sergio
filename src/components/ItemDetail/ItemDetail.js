@@ -33,6 +33,9 @@ export const ItemDetail = ( {item} ) => {
                 <p> Descripción:  {item.desciption}  </p>                
                 <h3> Categoría: {item.category}  </h3>
                 <h4> Precio {item.price}  </h4>
+                {item.promo && <h5 style= {{color:'red'}} > {item.promo}% OFF!! </h5>}
+
+
                 <hr/>
 
 

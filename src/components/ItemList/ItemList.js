@@ -4,18 +4,15 @@ import { Item } from '../Item/Iteml';
 export const ItemList = ({productos=[]}) =>{
 
   return(
-    <div>
-    {  productos.map( (prod)=>{
-        return(
-                <div key={prod.id}>
-                 <Item producto={prod} /> 
-                { /* < ItemCount stock={prod.stock}/> */ }
-                <hr/>                             
-               </div>  
-
-        )})
+    <div className="container my-5">
+       
+      { 
     
-    }
+        productos.map( (prod)=>{
+          if(prod.stock>0) {
+              return <Item producto={prod} key={prod.id}/>
+          }  
+      })}
 </div>
 
 

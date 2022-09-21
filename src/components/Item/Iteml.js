@@ -7,8 +7,14 @@ export const Item = ({producto}) => {
         <img src={producto.pictureURL} />
         <h4>{producto.title} </h4>             
         <p>Precio: {producto.price} </p>
-        <p>Descipción: {producto.description} </p>          
-        <Link to = { `/item/${producto.id}`  } className="btn btn-primary my-2">Ver más</Link>
+        <p>Descripción: {producto.description} </p> 
+            {
+                producto.stock>0
+                ?<Link to = { `/item/${producto.id}`  } className="btn btn-primary my-2">Ver más</Link>
+                : <p className="btn btn-outline-danger"> No hay stock para este producto</p>
+
+            }
+        
         <hr/>                             
        </div>  
     )

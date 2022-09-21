@@ -6,6 +6,7 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import { Link } from "react-router-dom";
+import { Cart } from "../Cart/Cart";
 
 
 export const Barranav = () =>{
@@ -21,7 +22,7 @@ export const Barranav = () =>{
                   <Link to ='/' className="header-navlink">Login</Link>
                   
 
-                  <CartWidget/>
+                  <CartWidget/> 
                  </nav>
             
         </section>
