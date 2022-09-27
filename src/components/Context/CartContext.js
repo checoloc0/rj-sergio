@@ -1,4 +1,4 @@
-import { Children, createContext } from "react";
+import { createContext } from "react";
 import { useState } from 'react';
 import Swal from 'sweetalert2'
 
@@ -52,8 +52,24 @@ export const CartProvider = ({children}) =>{
      
   }
 
+const terminarCompra =(id)=>{
+
+  Swal.fire(
+    {
+        title:'Tu compra es exitosa!!',
+        text : `Tú Número de compra es ${id}` ,
+        icon:'success',      
+        confirmButtonColor: '#3085d6',      
+        confirmButtonText:'Gracias!'
+    })
+    setCart([])
+
+
+}
+
+
     return (
-       <CartContext.Provider value={{cart,addToCart,isInCart,cartQuantity,cartTotal,emptyCart,removeItem}}>
+       <CartContext.Provider value={{cart,addToCart,isInCart,cartQuantity,cartTotal,emptyCart,removeItem,terminarCompra}}>
         {children}
 
         </CartContext.Provider>
