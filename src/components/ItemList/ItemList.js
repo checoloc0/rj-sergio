@@ -1,10 +1,11 @@
-import { ItemCount } from '../Container/ItemCount';
+
 import { Item } from '../Item/Iteml';
 
 export const ItemList = ({productos=[]}) =>{
 
   return(
-    <div className="container my-5">
+    //<div className="container my-6">
+    <div className="flex-container">
        
       { 
     

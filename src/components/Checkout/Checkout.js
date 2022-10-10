@@ -1,9 +1,10 @@
 import { useContext, useState } from "react"
 import { Navigate } from "react-router-dom"
-import { addDoc, collection} from "firebase/firestore"
+import { addDoc, collection, getDoc, updateDoc,doc, getFirestore,writeBatch,getDocs,query,where,documentId} from "firebase/firestore"
 import { CartContext } from "../Context/CartContext"
 import { db } from "../Firebase/config"
 
+import Swal from 'sweetalert2'
 
 export const Checkout = () => {
 
@@ -25,7 +26,7 @@ export const Checkout = () => {
         }
 
 
-    const handleSubmit= (e) => {
+    const handleSubmit= async(e) => {
         e.preventDefault()
         const orden= {
                comprador:values,
@@ -49,12 +50,72 @@ export const Checkout = () => {
         }
 
         //Enviar la orden a FB
-     
+        const batch = writeBatch(db)
         const ordenesRef= collection(db,'ordenes')
-        addDoc(ordenesRef,orden)
-            .then((doc)=> {
-                terminarCompra(doc.id)
-            })
+        const productosRef = collection(db,'productos')
+        const q = query(productosRef,where(documentId(),'in',cart.map(item=>item.id)))
+
+        const productos = await getDocs(q)
+
+        const outOfStock = []
+
+        productos.docs.forEach( (doc)=>{
+
+            const itemInCart= cart.find ( item => item.id=== doc.id)
+            if(doc.data().stock >= itemInCart.cantidad){
+                batch.update( doc.ref,{
+                    stock: doc.data().stock - itemInCart.cantidad
+                })
+            }else{
+                outOfStock.push(itemInCart)
+            }
+
+        })
+
+        if(outOfStock.length===0){
+                batch.commit()
+                .then( () => {
+                        addDoc(ordenesRef,orden)
+                            .then((doc)=>{
+                                terminarCompra(doc.id)
+                            })
+                })
+        }else{
+           
+         Swal.fire(
+           {
+              title:'Error en la compra',
+              text : 'No se pudo procesar tu compra por falta de stock' ,
+              icon:'error',      
+              confirmButtonColor: '#3085d6',      
+              confirmButtonText:'Gracias!'
+               })
+
+
+        }
+
+
+        /*cart.forEach( (item)=>{
+            const docref= doc(db,'productos',item.id)
+            getDoc(docref)
+
+                .then( (doc) => {
+                    if(doc.data().stock>= item.cantidad){
+                        updateDoc(docref,{stock: doc.data().stock - item.cantidad})
+                    }else{
+                        alert("No hay Stock Suficiente")
+                    }
+                   
+                })
+
+
+        })*/
+
+
+//addDoc(ordenesRef,orden)
+  //          .then((doc)=> {
+   //             terminarCompra(doc.id)
+    //        })
     }
 
     if(cart.length===0){

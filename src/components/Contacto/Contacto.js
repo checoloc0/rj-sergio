@@ -14,7 +14,7 @@ export const Contacto =() => {
                 Te recordamos que nuestro horario de atención al cliente es de Lunes a Domingo de 9:00 am a 9:00 pm. </p>
 
                 <form onSubmit={handleSubmit}>
-                    <input type={'text'} className="form-control my-2" />
+                    <input type={'text'} className="form-control my-1" width={50}/>
                     <button className="btn btn-primary" type="submit" > Enviar</button>
                 </form>
 

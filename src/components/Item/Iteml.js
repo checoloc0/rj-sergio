@@ -4,8 +4,8 @@ export const Item = ({producto}) => {
 
     return(
         <div> 
-        <img src={producto.pictureURL} />
-        <h4>{producto.title} </h4>             
+        <img src={producto.pictureURL} width={400} height={250}/>
+        <h4 size={20}>{producto.title} </h4>             
         <p>Precio: {producto.price} </p>
         <p>Descripción: {producto.description} </p> 
             {

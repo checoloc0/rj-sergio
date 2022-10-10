@@ -18,26 +18,7 @@ export const ItemListContainer =() => {
 
  console.log(categoryId)
 
- /*
-  useEffect( ()=>{
-      setLoading(true)
-      pedirProducto()
-          .then( (res)=>{
-            if( !categoryId ){
-            setProductos(res)}else{
-                setProductos(res.filter((prod)=> prod.category=== categoryId ))
-            }    
 
-            })
-          .catch( (res)=>{
-              console.log(res)
-            })
-          .finally( ()=>{
-              // console.log("Fin del proceso")
-              setLoading(false)
-          })
-    },[categoryId])
-*/
 
 
 useEffect( ()=>{
@@ -66,19 +47,6 @@ useEffect( ()=>{
 
 
 
-/*
-useEffect( ()=>{
-  setLoading(true)
- // 1 Armar la refrencia (syn)
-  const prodcutosRef = collection(db,'productos')
-  //2 consumir esa refrencia
-  getDocs(prodcutosRef)
-  .then( (resp)=>{ 
-      console.log(resp)
-  }  )
-     
-},[categoryId])
-*/
 
 return(
   
