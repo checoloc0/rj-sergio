@@ -19,7 +19,8 @@ export const Barranav = () =>{
               
                   <Link to ='/nosotros' className="header-navlink">Nosotros</Link>
                   <Link to ='/contacto' className="header-navlink">Contacto</Link>
-                  <Link to ='/' className="header-navlink">Login</Link>
+                  {//<Link to ='/' className="header-navlink">Login</Link>
+                  }
                   
 
                   <CartWidget/> 
